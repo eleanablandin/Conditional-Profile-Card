@@ -33,19 +33,31 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${variables.name ? variables.name : "Name"} ${
+    variables.lastname ? variables.lastname : "Last Name"
+  }</h1>
+          <h2>${variables.role ? variables.role : "Role"}</h2>
+          <h3>${variables.city ? variables.city : "City"}, ${
+    variables.country ? variables.country : "Country"
+  }</h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${
+              variables.twitter ? variables.twitter : ""
+            }}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github ? variables.github : ""
+            }"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${
+              variables.linkedin ? variables.linkedin : ""
+            }"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${
+              variables.instagram ? variables.instagram : ""
+            }"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
 }
-
+///alesanchezr
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
  */
